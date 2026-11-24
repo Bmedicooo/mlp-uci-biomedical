@@ -1,7 +1,7 @@
 # Informe: perceptrón multicapa superficial para clasificación de EEG y regresión de CD4
 
 **Autor:** Juan Diego Estupiñán Rincón · Especialización en Inteligencia Artificial, Universidad Autónoma de Occidente
-**Fecha:** noviembre de 2026
+**Fecha:** Noviembre de 2026
 **Código y reproducción:** ver [README.md](README.md) · **Análisis ejecutable:** [notebooks/taller_mlp_uci.ipynb](notebooks/taller_mlp_uci.ipynb)
 
 ---
