@@ -1,0 +1,236 @@
+{
+  "task": "regression",
+  "dataset": "ACTG 175 (UCI 890)",
+  "target": "cd420",
+  "split_mode": "random",
+  "config": {
+    "out_dir": "..\\reports\\actg175_regression",
+    "data_path": "D:\\2026\\EEG\\mlp-uci-biomedical\\data\\raw\\actg175.csv",
+    "seed": 42,
+    "n_seeds": 5,
+    "max_epochs": 300,
+    "batch_size": 128,
+    "patience": 20,
+    "split": "default",
+    "dataset": "actg175",
+    "include_sensitive": false,
+    "grid": {
+      "architecture": [
+        "A_1x16",
+        "B_1x128",
+        "C_2x64_32"
+      ],
+      "optimizer": [
+        "adam",
+        "sgd",
+        "rmsprop"
+      ],
+      "dropout": [
+        0.0,
+        0.2
+      ],
+      "l2": [
+        0.0
+      ]
+    }
+  },
+  "features": [
+    "age",
+    "wtkg",
+    "karnof",
+    "preanti",
+    "cd40",
+    "cd80",
+    "hemo",
+    "oprior",
+    "z30",
+    "zprior",
+    "str2",
+    "symptom",
+    "trt_0",
+    "trt_1",
+    "trt_2",
+    "trt_3",
+    "strat_1",
+    "strat_2",
+    "strat_3"
+  ],
+  "split_sizes": {
+    "train": 1497,
+    "val": 321,
+    "test": 321
+  },
+  "target_stats_test": {
+    "mean": 377.2398753894081,
+    "std": 141.43407179815276
+  },
+  "best_hyperparameters": {
+    "optimizer": "sgd",
+    "dropout": 0.2,
+    "l2": 0.0,
+    "hidden_layers": [
+      128
+    ]
+  },
+  "n_parameters": 2689,
+  "search": {
+    "by_optimizer": {
+      "adam": 0.55498,
+      "rmsprop": 0.55498,
+      "sgd": 0.55349
+    },
+    "by_architecture": {
+      "A_1x16": 0.56365,
+      "B_1x128": 0.55349,
+      "C_2x64_32": 0.5707
+    },
+    "best": {
+      "architecture": "B_1x128",
+      "optimizer": "sgd",
+      "dropout": 0.2,
+      "l2": 0.0,
+      "val_loss": 0.553491473197937,
+      "epochs": 3,
+      "n_params": 2689
+    }
+  },
+  "test_mlp": {
+    "rmse": {
+      "mean": 113.0267410717187,
+      "std": 0.5888407327337406
+    },
+    "mae": {
+      "mean": 86.78208308234764,
+      "std": 0.5132872181897136
+    },
+    "r2": {
+      "mean": 0.361345304827301,
+      "std": 0.0066560420503928835
+    }
+  },
+  "test_mlp_seed0": {
+    "rmse": 112.12998003760589,
+    "mae": 85.75786079573112,
+    "r2": 0.3714564118872512
+  },
+  "baselines": {
+    "mean_predictor": {
+      "rmse": 141.6309034161315,
+      "mae": 112.75866374493535,
+      "r2": -0.0027853059625468912
+    },
+    "ridge": {
+      "rmse": 111.60966647355819,
+      "mae": 84.55476796736511,
+      "r2": 0.37727610395774425
+    },
+    "random_forest": {
+      "rmse": 116.51676090988715,
+      "mae": 90.26461059190032,
+      "r2": 0.321314271627416
+    },
+    "no_change (cd420 = cd40)": {
+      "rmse": 124.4336328006324,
+      "mae": 92.83177570093459,
+      "r2": 0.2259527508500131
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "cd40",
+      "mean_drop": 0.646704195444547,
+      "std_drop": 0.04401151213746902
+    },
+    {
+      "feature": "trt_0",
+      "mean_drop": 0.0454152601196202,
+      "std_drop": 0.012458648907096467
+    },
+    {
+      "feature": "trt_2",
+      "mean_drop": 0.02300221904744524,
+      "std_drop": 0.005256045190856321
+    },
+    {
+      "feature": "hemo",
+      "mean_drop": 0.022552982236321007,
+      "std_drop": 0.008084475581117547
+    },
+    {
+      "feature": "strat_3",
+      "mean_drop": 0.017911506951794998,
+      "std_drop": 0.0031740614073886946
+    },
+    {
+      "feature": "z30",
+      "mean_drop": 0.017544096658863605,
+      "std_drop": 0.006167112147084264
+    },
+    {
+      "feature": "preanti",
+      "mean_drop": 0.01691158911982491,
+      "std_drop": 0.004758170840622763
+    },
+    {
+      "feature": "strat_1",
+      "mean_drop": 0.010718290944073639,
+      "std_drop": 0.001493455488341845
+    },
+    {
+      "feature": "strat_2",
+      "mean_drop": 0.009446615340835018,
+      "std_drop": 0.0021806985023575596
+    },
+    {
+      "feature": "trt_1",
+      "mean_drop": 0.008519227785708261,
+      "std_drop": 0.006264342535422124
+    },
+    {
+      "feature": "trt_3",
+      "mean_drop": 0.008216773768775965,
+      "std_drop": 0.005518038359575792
+    },
+    {
+      "feature": "str2",
+      "mean_drop": 0.006980602577610217,
+      "std_drop": 0.004093272198696203
+    },
+    {
+      "feature": "oprior",
+      "mean_drop": 0.005098051345692944,
+      "std_drop": 0.008661102800901488
+    },
+    {
+      "feature": "symptom",
+      "mean_drop": 0.004732939015157922,
+      "std_drop": 0.0027757857644510942
+    },
+    {
+      "feature": "age",
+      "mean_drop": 0.003132265555229119,
+      "std_drop": 0.003449892459686746
+    },
+    {
+      "feature": "zprior",
+      "mean_drop": 0.0,
+      "std_drop": 0.0
+    },
+    {
+      "feature": "karnof",
+      "mean_drop": -0.0020499263143515913,
+      "std_drop": 0.002487569902829963
+    },
+    {
+      "feature": "wtkg",
+      "mean_drop": -0.0027775844552128783,
+      "std_drop": 0.004779467373187519
+    },
+    {
+      "feature": "cd80",
+      "mean_drop": -0.0031583219836996525,
+      "std_drop": 0.010713840214044227
+    }
+  ],
+  "wall_time_s": 184.7
+}

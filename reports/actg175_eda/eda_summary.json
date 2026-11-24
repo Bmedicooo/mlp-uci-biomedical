@@ -1,0 +1,73 @@
+{
+  "n_patients": 2139,
+  "missing_values": {},
+  "cd40": {
+    "count": 2139.0,
+    "mean": 350.5,
+    "std": 118.57,
+    "min": 0.0,
+    "25%": 263.5,
+    "50%": 340.0,
+    "75%": 423.0,
+    "max": 1199.0
+  },
+  "cd420": {
+    "count": 2139.0,
+    "mean": 371.31,
+    "std": 144.63,
+    "min": 49.0,
+    "25%": 269.0,
+    "50%": 353.0,
+    "75%": 460.0,
+    "max": 1119.0
+  },
+  "corr_cd40_cd420": 0.5835782819432497,
+  "change_by_arm": {
+    "ZDV": {
+      "n": 532,
+      "mean_change": -17.06578947368421,
+      "ci95": [
+        -25.962453664700863,
+        -8.169125282667554
+      ]
+    },
+    "ZDV+ddI": {
+      "n": 522,
+      "mean_change": 54.44827586206897,
+      "ci95": [
+        42.07121063943951,
+        66.82534108469844
+      ]
+    },
+    "ZDV+Zal": {
+      "n": 524,
+      "mean_change": 19.263358778625953,
+      "ci95": [
+        9.642950265278929,
+        28.88376729197298
+      ]
+    },
+    "ddI": {
+      "n": 561,
+      "mean_change": 26.857397504456326,
+      "ci95": [
+        17.379592658109388,
+        36.335202350803264
+      ]
+    }
+  },
+  "excluded_columns": {
+    "pidnum": "patient identifier",
+    "cid": "outcome: event indicator (observed after baseline)",
+    "time": "outcome: days to event/censoring (observed after baseline)",
+    "offtrt": "off treatment before 96 weeks (observed after baseline)",
+    "cd820": "CD8 count at 20 weeks (measured after baseline)",
+    "treat": "redundant with trt"
+  },
+  "sensitive_columns_excluded_by_default": [
+    "race",
+    "gender",
+    "homo",
+    "drugs"
+  ]
+}

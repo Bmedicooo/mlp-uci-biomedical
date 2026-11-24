@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+# datos crudos (se descargan con el CLI; ver data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+# artefactos pesados de modelos (los resultados y figuras SÍ se versionan)
+reports/**/model.keras
+reports/**/scaler.joblib

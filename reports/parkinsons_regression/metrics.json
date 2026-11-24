@@ -1,0 +1,191 @@
+{
+  "task": "regression",
+  "dataset": "Parkinsons Telemonitoring (UPDRS, UCI 189)",
+  "target": "total_UPDRS",
+  "split_mode": "group",
+  "config": {
+    "out_dir": "..\\reports\\parkinsons_regression",
+    "data_path": "D:\\2026\\EEG\\mlp-uci-biomedical\\data\\raw\\parkinsons_updrs.data",
+    "seed": 42,
+    "n_seeds": 5,
+    "max_epochs": 200,
+    "batch_size": 64,
+    "patience": 20,
+    "split": "group",
+    "drop_test_time": false,
+    "grid": {
+      "hidden_units": [
+        16,
+        64,
+        256
+      ],
+      "dropout": [
+        0.0,
+        0.2
+      ],
+      "l2": [
+        0.0,
+        0.001
+      ],
+      "learning_rate": [
+        0.001
+      ]
+    }
+  },
+  "split_sizes": {
+    "train": 3939,
+    "val": 957,
+    "test": 979
+  },
+  "patients_per_set": {
+    "train": 28,
+    "val": 7,
+    "test": 7
+  },
+  "patient_overlap_train_test": 0,
+  "target_stats_test": {
+    "mean": 25.341644535240043,
+    "std": 9.161307397760416
+  },
+  "best_hyperparameters": {
+    "hidden_units": 16,
+    "dropout": 0.2,
+    "l2": 0.0,
+    "learning_rate": 0.001
+  },
+  "n_parameters": 337,
+  "test_mlp": {
+    "rmse": {
+      "mean": 10.417729365929535,
+      "std": 1.1248596938815918
+    },
+    "mae": {
+      "mean": 9.278645387124675,
+      "std": 1.0689171749897648
+    },
+    "r2": {
+      "mean": -0.30817322670122305,
+      "std": 0.2835619843488828
+    }
+  },
+  "test_mlp_seed0": {
+    "rmse": 9.056562624088327,
+    "mae": 7.835152402618689,
+    "r2": 0.022736051827351833
+  },
+  "baselines": {
+    "mean_predictor": {
+      "rmse": 10.292345408160243,
+      "mae": 8.971586220013531,
+      "r2": -0.2621582019229878
+    },
+    "ridge": {
+      "rmse": 9.558093899929297,
+      "mae": 8.744745200983408,
+      "r2": -0.08849809723992408
+    },
+    "random_forest": {
+      "rmse": 14.654525655357013,
+      "mae": 11.86154882431052,
+      "r2": -1.5587545018735685
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "HNR",
+      "mean_drop": 0.3384497378294665,
+      "std_drop": 0.018884810563768784
+    },
+    {
+      "feature": "Shimmer:APQ5",
+      "mean_drop": 0.2557499763612598,
+      "std_drop": 0.01586758887166083
+    },
+    {
+      "feature": "age",
+      "mean_drop": 0.1624484891394063,
+      "std_drop": 0.010980190223937373
+    },
+    {
+      "feature": "Jitter(%)",
+      "mean_drop": 0.10017010745843749,
+      "std_drop": 0.008500508756629591
+    },
+    {
+      "feature": "Jitter:PPQ5",
+      "mean_drop": 0.09440434654733224,
+      "std_drop": 0.007996115577721329
+    },
+    {
+      "feature": "DFA",
+      "mean_drop": 0.06065867053472336,
+      "std_drop": 0.002428055303483508
+    },
+    {
+      "feature": "Shimmer:DDA",
+      "mean_drop": 0.05875306613092555,
+      "std_drop": 0.009000549736121535
+    },
+    {
+      "feature": "Shimmer:APQ3",
+      "mean_drop": 0.057912602698023494,
+      "std_drop": 0.018315537801006067
+    },
+    {
+      "feature": "sex",
+      "mean_drop": 0.056915108651845216,
+      "std_drop": 0.007121089761138136
+    },
+    {
+      "feature": "Jitter:RAP",
+      "mean_drop": 0.052583764356663384,
+      "std_drop": 0.00616028035282737
+    },
+    {
+      "feature": "Jitter:DDP",
+      "mean_drop": 0.04848192800997157,
+      "std_drop": 0.0053499076549781595
+    },
+    {
+      "feature": "test_time",
+      "mean_drop": 0.04426547993696968,
+      "std_drop": 0.006621988854209407
+    },
+    {
+      "feature": "RPDE",
+      "mean_drop": 0.034419071024857084,
+      "std_drop": 0.0052137848074494675
+    },
+    {
+      "feature": "Jitter(Abs)",
+      "mean_drop": 0.014485114752318506,
+      "std_drop": 0.006520596718911451
+    },
+    {
+      "feature": "PPE",
+      "mean_drop": 0.012701221261316942,
+      "std_drop": 0.006891696960363292
+    },
+    {
+      "feature": "Shimmer:APQ11",
+      "mean_drop": -0.019086253083587155,
+      "std_drop": 0.0035657305586030523
+    },
+    {
+      "feature": "NHR",
+      "mean_drop": -0.01919384355831717,
+      "std_drop": 0.004314032223689742
+    },
+    {
+      "feature": "Shimmer(dB)",
+      "mean_drop": -0.07940442325731538,
+      "std_drop": 0.008222228914946143
+    },
+    {
+      "feature": "Shimmer",
+      "mean_drop": -0.09187024536087854,
+      "std_drop": 0.009803939859521039
+    }
+  ],
+  "wall_time_s": 231.8
+}

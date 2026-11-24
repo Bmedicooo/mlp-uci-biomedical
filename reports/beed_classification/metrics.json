@@ -1,0 +1,221 @@
+{
+  "task": "classification",
+  "dataset": "BEED (UCI 1134)",
+  "config": {
+    "out_dir": "..\\reports\\beed_classification",
+    "data_path": "D:\\2026\\EEG\\mlp-uci-biomedical\\data\\raw\\BEED_Data.csv",
+    "seed": 42,
+    "n_seeds": 5,
+    "max_epochs": 300,
+    "batch_size": 128,
+    "patience": 20,
+    "split": "default",
+    "dataset": "actg175",
+    "include_sensitive": false,
+    "grid": {
+      "architecture": [
+        "A_1x16",
+        "B_1x128",
+        "C_2x64_32"
+      ],
+      "optimizer": [
+        "adam",
+        "sgd",
+        "rmsprop"
+      ],
+      "dropout": [
+        0.0,
+        0.2
+      ],
+      "l2": [
+        0.0
+      ]
+    }
+  },
+  "split_sizes": {
+    "train": 5600,
+    "val": 1200,
+    "test": 1200
+  },
+  "class_distribution": {
+    "healthy": 2000,
+    "generalized_seizure": 2000,
+    "focal_seizure": 2000,
+    "seizure_events": 2000
+  },
+  "best_hyperparameters": {
+    "optimizer": "adam",
+    "dropout": 0.0,
+    "l2": 0.0,
+    "hidden_layers": [
+      128
+    ]
+  },
+  "n_parameters": 2692,
+  "search": {
+    "by_optimizer": {
+      "adam": 0.11186,
+      "rmsprop": 0.11234,
+      "sgd": 0.11868
+    },
+    "by_architecture": {
+      "A_1x16": 0.26516,
+      "B_1x128": 0.11186,
+      "C_2x64_32": 0.11313
+    },
+    "best": {
+      "architecture": "B_1x128",
+      "optimizer": "adam",
+      "dropout": 0.0,
+      "l2": 0.0,
+      "val_loss": 0.11185833066701889,
+      "epochs": 300,
+      "n_params": 2692
+    }
+  },
+  "test_mlp": {
+    "accuracy": {
+      "mean": 0.9568333333333333,
+      "std": 0.0033911649915626197
+    },
+    "macro_f1": {
+      "mean": 0.9569348632713988,
+      "std": 0.0033750287804751042
+    },
+    "roc_auc_ovr": {
+      "mean": 0.9965259259259259,
+      "std": 0.00042475684967316953
+    }
+  },
+  "test_mlp_seed0": {
+    "accuracy": 0.9608333333333333,
+    "macro_f1": 0.9609349825093503,
+    "roc_auc_ovr": 0.9972638888888888
+  },
+  "per_class_seed0": {
+    "healthy": {
+      "precision": 1.0,
+      "recall": 0.9933333333333333,
+      "f1-score": 0.9966555183946488,
+      "support": 300.0
+    },
+    "generalized_seizure": {
+      "precision": 0.9831649831649831,
+      "recall": 0.9733333333333334,
+      "f1-score": 0.9782244556113903,
+      "support": 300.0
+    },
+    "focal_seizure": {
+      "precision": 0.9362416107382551,
+      "recall": 0.93,
+      "f1-score": 0.9331103678929766,
+      "support": 300.0
+    },
+    "seizure_events": {
+      "precision": 0.9250814332247557,
+      "recall": 0.9466666666666667,
+      "f1-score": 0.9357495881383855,
+      "support": 300.0
+    }
+  },
+  "baselines": {
+    "majority_class": {
+      "accuracy": 0.25,
+      "macro_f1": 0.1,
+      "roc_auc_ovr": 0.5
+    },
+    "logistic_regression": {
+      "accuracy": 0.465,
+      "macro_f1": 0.4678411149113165,
+      "roc_auc_ovr": 0.659024074074074
+    },
+    "random_forest": {
+      "accuracy": 0.9608333333333333,
+      "macro_f1": 0.9609521018923037,
+      "roc_auc_ovr": 0.9971912037037038
+    }
+  },
+  "channel_importance": [
+    {
+      "feature": "X7",
+      "mean_drop": 0.16599999999999998,
+      "std_drop": 0.007367345368433426
+    },
+    {
+      "feature": "X12",
+      "mean_drop": 0.16583333333333333,
+      "std_drop": 0.0056025787713238915
+    },
+    {
+      "feature": "X11",
+      "mean_drop": 0.16516666666666666,
+      "std_drop": 0.008521215354109457
+    },
+    {
+      "feature": "X8",
+      "mean_drop": 0.16316666666666665,
+      "std_drop": 0.0027080128015453215
+    },
+    {
+      "feature": "X5",
+      "mean_drop": 0.16133333333333336,
+      "std_drop": 0.004760952285695231
+    },
+    {
+      "feature": "X4",
+      "mean_drop": 0.156,
+      "std_drop": 0.01036018017861338
+    },
+    {
+      "feature": "X1",
+      "mean_drop": 0.14766666666666667,
+      "std_drop": 0.007156970184527952
+    },
+    {
+      "feature": "X6",
+      "mean_drop": 0.14699999999999996,
+      "std_drop": 0.006271629240742248
+    },
+    {
+      "feature": "X16",
+      "mean_drop": 0.14416666666666667,
+      "std_drop": 0.010260495981080926
+    },
+    {
+      "feature": "X15",
+      "mean_drop": 0.14416666666666664,
+      "std_drop": 0.004624812308503876
+    },
+    {
+      "feature": "X10",
+      "mean_drop": 0.14066666666666666,
+      "std_drop": 0.0053593117302711876
+    },
+    {
+      "feature": "X2",
+      "mean_drop": 0.13999999999999996,
+      "std_drop": 0.005296749527356891
+    },
+    {
+      "feature": "X3",
+      "mean_drop": 0.13966666666666663,
+      "std_drop": 0.008343327340522564
+    },
+    {
+      "feature": "X9",
+      "mean_drop": 0.13933333333333334,
+      "std_drop": 0.005783117190965824
+    },
+    {
+      "feature": "X14",
+      "mean_drop": 0.11316666666666667,
+      "std_drop": 0.00727247474309048
+    },
+    {
+      "feature": "X13",
+      "mean_drop": 0.11083333333333331,
+      "std_drop": 0.00408248290463862
+    }
+  ],
+  "wall_time_s": 1394.4
+}

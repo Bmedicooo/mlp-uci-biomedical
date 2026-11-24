@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlp-uci-biomedical"
+version = "0.1.0"
+description = "Shallow MLPs in TensorFlow-Keras on UCI biomedical data: EEG epilepsy classification (BEED) and ACTG 175 CD4 regression."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Juan Diego Estupiñán Rincón" }]
+dependencies = [
+    "tensorflow>=2.16",
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.9",
+    "joblib>=1.3",
+    "ucimlrepo>=0.0.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "jupyter>=1.0", "nbconvert>=7"]
+
+[project.scripts]
+mlp-uci = "mlp_uci.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
